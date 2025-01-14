@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}Balans oefening - Ontspanning{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Spieren ontspannen </h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='balans_spieren_ontspannen') }}" method="post">
+                    {% if 'balans_spieren_ontspannen' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p>Het ontspannen van je spieren draagt aanzienlijk bij aan een gevoel van rust in je lichaam, omdat het direct invloed heeft op je fysieke en mentale toestand. Wanneer je spieren gespannen zijn, of het nu door stress, langdurig zitten of inspanning is, kan dit bijdragen aan gevoelens van onrust. Wanneer je bewust je spieren ontspant, vermindert de spanning in je lichaam. Dit zorgt voor een kalmerend effect op je zenuwstelsel, waardoor je hartslag en ademhaling vertragen. Bovendien zorgt spierontspanning ervoor dat je lichaam minder energie hoeft te besteden aan het constant vasthouden van spanning.  </p>
+            
+            <div class="one-section"></div>
+            <div class="section_h">
+                <h4>Hieronder staan een aantal eenvoudige oefeningen die je achter je bureau kunt doen om je spieren te ontspannen en spanning te verlichten. Adem diep in en uit tijdens de oefeningen om te zorgen voor ontspanning en een betere doorbloeding.</h4>
+                <p><li>Schouderrolletjes</li></p>
+                <p>Zit rechtop in je stoel. Til je schouders langzaam naar je oren, rol ze dan naar achteren en laat ze weer naar beneden zakken. Herhaal dit 10 keer.
+                    Helpt spanning in de schouders en nek te verlichten.</p>
+                <p><li>Nek- en schouderstretch</li></p>
+                <p>Zit rechtop en laat je rechteroor naar je rechterschouder zakken. Gebruik je rechterhand om zachtjes druk uit te oefenen op je hoofd voor een diepere stretch. Houd deze positie 20-30 seconden vast, herhaal aan de andere kant.
+                    Het verlicht spanning in de nek en schouders.</p>
+                <p><li>Pols- en handstretch</li></p>
+                <p>Strek je arm voor je uit met de handpalm naar beneden. Gebruik je andere hand om je vingers naar beneden te trekken, zodat je pols wordt gestrekt. Houd dit 15-20 seconden vast en wissel van hand.
+                    Verlicht spanning in de handen en polsen, wat vooral handig is bij langdurig typen.</p>
+                <p><li>Zit-streking van de rug</li></p>
+                <p>Zit rechtop met je voeten plat op de grond. Leg je handen op je bovenbenen en reik langzaam met je handen naar je voeten. Probeer je rug recht te houden terwijl je naar voren leunt, en voel de stretch in je onderrug. Houd dit 15-20 seconden vast en kom langzaam weer omhoog.
+                    Het verlicht spanning in de onderrug.</p>
+                <p><li>Torso draaibewegingen</li></p>
+                <p> Zit rechtop en houd je handen achter je hoofd of leg ze op je schouders. Draai langzaam je bovenlichaam naar rechts, houd even vast, en draai dan naar links. Herhaal 5-10 keer aan elke kant.
+                    Het verlicht spanning in je rug en verbetert de flexibiliteit van je wervelkolom.</p>
+                <p><li> Heup- en beenspieren stretchen </li></p>
+                <p> Zit rechtop met je voeten plat op de grond. Til je rechterbeen op en leg je enkel op je linkerknie (alsof je een figuur 4 maakt). Druk zachtjes op je rechterknie om een stretch in je heup en bil te voelen. Houd 20-30 seconden vast en wissel van kant.
+                     Ontspant de heup- en bilspieren, die vaak gespannen zijn van lang zitten.</p>
+                <p><li>Kuiten en benen rekken</li></p>
+                <p>Zit rechtop en strek één been uit, met de hiel op de grond en de tenen omhoog. Buig je voet naar je toe, zodat je kuit en onderbeen gestrekt worden. Houd dit 15-20 seconden vast en wissel van been.
+                    Het verlicht spanning in je kuiten en benen, wat kan ontstaan door lang zitten.</p>
+                <p><li>Schouderbladen knijpen</li></p>
+                <p>Zit rechtop en trek je schouderbladen naar elkaar toe alsof je probeert een potlood tussen je schouderbladen te klemmen. Houd deze positie 5-10 seconden vast en herhaal 10 keer.
+                    Versterkt de spieren tussen je schouderbladen en verbetert je houding.</p>
+            </div>
+                
+                  
+        </div>
+    </main>
+{% endblock %}

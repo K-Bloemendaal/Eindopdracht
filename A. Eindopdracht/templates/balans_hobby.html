@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block title %}Balans oefening - Hobby{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Hobby</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='balans_hobby') }}" method="post">
+                    {% if 'balans_hobby' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p> Ontspannende hobby's zijn belangrijk voor je mentale gezondheid. Ze bieden een welkome afleiding van de drukte van het dagelijks leven en helpen om te ontsnappen aan zorgen. Ze stellen je in staat om in het moment te zijn. Door regelmatig ontspannende hobby's te beoefenen, kun je je mentale welzijn verbeteren, energie opladen en een betere balans vinden tussen werk en privé. </p>
+            
+            <div class="one-section"></div>
+            <div class="section_h">
+                <h4> Een ontspannende hobby kan van alles zijn. Het is hierbij belangrijk dat het een hobby is zonder schermen. Gamen of tv-kijken is prima, maar niet de hobby die we nu zoeken voor het behalen balans tussen prikkels en rust. Hieronder een aantal voorbeelden van ontspannende acitiviteiten. </h4>
+                <p><li>Schilderen</li></p>
+                <p>Begin met basisbenodigdheden zoals acrylverf of waterverf, penselen en doek, en kies een eenvoudig onderwerp om mee te starten. 
+                    Gebruik online tutorials voor begeleiding en focus op plezier in plaats van perfectie. </p>
+                <p><li>Tekenen</li></p>
+                <p>Om te beginnen met tekenen, heb je niet veel nodig: een potlood, papier en een gum zijn voldoende voor de eerste stappen. Begin met eenvoudige vormen en lijnen om je hand en technieken te ontwikkelen en oefen om je vaardigheden te verbeteren. </p>
+                <p><li>Breien of haken</li></p>
+                <p>Begin met middelmatig dik garen en bijpassende naalden. Leer de basissteken zoals kettingsteken (haken) of rechte steken (breien). Start met kleine projecten zoals een sjaal of muts en oefen regelmatig om je vaardigheden te verbeteren. </p>
+                <p><li>Lezen</li></p>
+                <p>Verken genres die je leuk vindt, lees boekrecensies op platforms zoals Goodreads en vraag vrienden of boekwinkels om aanbevelingen.</p>
+                <p><li>Kleurplaten voor volwassenen</li></p>
+                <p>Tegenwoordig zijn er zelfs hele boeken met kleurplaten voor volwassenen. Ook kan je googlen voor leuke kleurplaten. Ga voor mandala's of natuurthema's voor een ontspannende ervaring.</p>
+                <p><li>Muziek beluisteren</li></p>
+                <p>Verken verschillende rustige genres, gebruik Spotify's "Nummer Radio"-functie om vergelijkbare muziek te ontdekken. Ervaar hoe vrolijke/rustige muziek je emoties beïnvloedt.</p>
+                <p><li>Legpuzzels</li></p>
+                <p>Zoek op zolder naar een verdwaalde legpuzzle. Kijk bij kringlopen of trakteer jezelf op een mooie nieuwe puzzle.</p>
+                <p><li>Escape puzzles voor thuis</li></p>
+                <p>Tegenwoordig een leuke variant voor thuis. Bekijk de verschillende escapespellen opties en ga thuis op avontuur.</p>
+                <p><li>Buiten wandelen</li></p>
+                <p>Buiten wandelen biedt tal van voordelen voor rust en welzijn. Het verbetert de mentale gezondheid, de geest te verfrissen en gevoelens van angst of spanning te verlichten. Daarnaast stimuleert het de productie van endorfines, wat zorgt voor een verbeterd humeur en meer ontspanning. Wandelen in de natuur helpt ook om te ontstressen, terwijl het tegelijkertijd de fysieke gezondheid bevordert door de bloedsomloop en de slaapkwaliteit te verbeteren.</p>
+                <p><li>Trucjes leren aan je hond of kat</li></p>
+                <p>Begin met eenvoudige commando's, gebruik positieve beloning en wees geduldig en consistent tijdens korte trainingssessies. Het gaat uiteindelijk om het plezier van jullie beide, niet of de trucs goed gaan.</p>
+            </div>   
+        </div>
+    </main>
+{% endblock %}

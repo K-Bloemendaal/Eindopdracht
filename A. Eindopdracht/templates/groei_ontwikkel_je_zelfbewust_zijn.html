@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block title %}Groei oefening - Zelf bewust zijn{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Ontwikkel je zelfbewust zijn</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='groei_ontwikkel_je_zelfbewust_zijn') }}" method="post">
+                    {% if 'groei_ontwikkel_je_zelfbewust_zijn' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p>Zelfbewustzijn vergroten helpt je om beter inzicht te krijgen in je eigen gedachten, emoties en gedrag. Door jezelf beter te begrijpen, kun je bewuste keuzes maken die in lijn zijn met je waarden en doelen.  </p>
+            
+            <div class="one-section"></div>
+            <div class="section_h">
+                <p><li>Intentie</li></p>
+                <p>Schrijf op wat je aan jezelf en aan je leven wilt veranderen. Zijn er bepaalde gevoelens waarmee je worstelt? Is er iets in je gedrag dat je zou willen veranderen? Wat zijn je wensen?</p>
+                <p><li>Motivatie</li></p>
+                <p>Schrijf vervolgens op waarom je dat wilt veranderen of waarom jij vindt dat je dat moet veranderen. Leg uit waarom je je droom wilt waarmaken?</p>
+                <p><li>Sabotage</li></p>
+                <p>Als je weet wat je wilt veranderen en je hebt motivatie om dit te doen, waarom heb je dit tot op heden nog niet gedaan?</p>
+                <p><li>Offer</li></p>
+                <p>Geen succes zonder opoffering. Als je doelen wilt behalen en dromen wilt waarmaken, zal jij daar iets voor moeten doen en moeten laten. Wat heb jij over voor je dromen?</p>
+                <p><li>Positieve consequenties</li></p>
+                <p>Wat gebeurt er en hoe zal jij je voelen als datgene aan jezelf en in je leven verandert? Wat kunnen of zullen positieve gevolgen zijn als je dit voor elkaar krijgt?</p>
+                <p><li>Negatieve consequenties</li></p>
+                <p>Wat gebeurt er als je nu geen actie onderneemt? Wat kunnen nadelige gevolgen zijn als je geen stappen zet? Schrijf de senario's op. </p>
+
+            </div>
+        
+                
+                  
+        </div>
+    </main>
+{% endblock %}

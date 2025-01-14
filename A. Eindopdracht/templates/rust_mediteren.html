@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}Rust oefening - Mediteren{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Mediteren</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='rust_mediteren') }}" method="post">
+                    {% if 'rust_mediteren' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+
+            <p>Meditatie biedt voordelen voor stressvermindering, mentale gezondheid en rust. Het verlaagt stress door het activeren van het parasympathische zenuwstelsel, wat resulteert in een lagere hartslag en bloeddruk. Meditatie helpt ook bij het verminderen van symptomen van angst en depressie door negatieve denkpatronen te doorbreken.</p>
+            
+            <div class="one-section"></div>
+            <div class="section_b">
+                <h3>Meditatie Stappenplan</h3>
+                <div class="mb-5">
+                    <p><span class="step-title"><strong>1. Kies een rustige plek:</strong></span> Zoek een rustige omgeving waar je niet gestoord wordt. Dit kan een stille kamer zijn of een plek buiten, zolang het maar een plek is waar je je kunt concentreren.</p>
+                    <p><span class="step-title"><strong>2. Zorg voor een comfortabele houding:</strong></span> Ga rechtop zitten of liggen in een comfortabele positie. Dit kan op een stoel zijn met je voeten plat op de grond, op de grond met een meditatiekussen of op bed. Zorg dat je ontspannen zit of ligt.</p>
+                    <p><span class="step-title"><strong>3. Sluit je ogen:</strong></span> Sluit zachtjes je ogen om externe afleidingen te verminderen. Dit helpt je om naar binnen te keren en je beter te concentreren.</p>
+                    <p><span class="step-title"><strong>4. Focus op je ademhaling:</strong></span> Breng je aandacht naar je ademhaling. Adem langzaam en diep in door je neus en adem weer uit door je mond of neus (afhankelijk van wat voor jou het prettigst is). Tip: Heb je moeite met wat voor ademhaling het beste is? Probeer de ademhalingsoefening dan eerst.</p>
+                    <p><span class="step-title"><strong>5. Laat gedachten komen en gaan:</strong></span> Gedachten zullen onvermijdelijk opkomen tijdens meditatie. Dit is normaal. In plaats van je gedachten te veroordelen, observeer je ze zonder erop in te gaan. Laat ze rustig voorbijdrijven als wolken in de lucht en breng je focus rustig weer terug naar je ademhaling.</p>
+                    <p><span class="step-title"><strong>6. Gebruik een mantra (optioneel):</strong></span> Sommige mensen vinden het fijn om een mantra (een woord of korte zin) te herhalen tijdens het mediteren, zoals “rust” of “ik ben kalm.” Dit kan helpen met je gedachten en de meditatie rustgevender maken.</p>
+                    <p><span class="step-title"><strong>7. Wees geduldig:</strong></span> Mediteer in het begin slechts een paar minuten, bijvoorbeeld 5 tot 10 minuten. Naarmate je ervaring toeneemt, kun je de tijd langzaam uitbreiden. Wees geduldig met jezelf en accepteer dat je gedachten afdwalen; dit is een normaal deel van de praktijk.</p>
+                    <p><span class="step-title"><strong>8. Afronden van de sessie:</strong></span> Wanneer je klaar bent, open langzaam je ogen. Breng je aandacht weer terug naar de ruimte om je heen. Beweeg langzaam je handen en voeten. Wanneer je er klaar voor bent, sta rustig op.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+

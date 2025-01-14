@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Photogallery - Miauw</title>
+    <link rel="stylesheet" type="text/css" href="opmaak.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #EFE7DB;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+            background-color: #592321;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color: #592321;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .content img {
+            margin: 5px;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="website.html">MAINPAGE</a>
+            <a href="learnaboutme_eindcode.html">LEARN ABOUT ME</a>
+            <a href="myproject.html">PROJECTS</a>
+            <a href="fotogalerij.html">PHOTOGALLERY</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="text-center my-4">Project 2</h1>
+
+        <div class="content text-center">
+            <img src="foto/project2.jpg" alt="The most handsome fluffy boy" width="200" class="img-fluid">
+        </div>
+
+
+        <a href="myproject.html" class="btn btn-secondary mt-4">Back to project page</a>
+
+        <footer class="text-center mt-4">
+            <p>&copy; 2024 Marley’s Fanpage</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

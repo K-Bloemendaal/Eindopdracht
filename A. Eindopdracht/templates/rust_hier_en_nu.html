@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Rust oefening - Hier en nu{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Hier en nu </h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='rust_hier_en_nu') }}" method="post">
+                    {% if 'rust_hier_en_nu' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p>Bij gevoelens van angst zit je vaak met je aandacht in de toekomst. En bij piekeren zit je met je aandacht in het verleden. Simpele oefeningen kunnen helpen om je aandacht naar het hier en nu te brengen. Je kan de oefeningen hardop doen of in gedachten. </p>
+            
+            <div class="one-section"></div>
+            <div class="section_b">
+                <h3>Hier en nu oefeningen</h3>
+                <div class="mb-5">
+                    <p><li>Kijk om je heen en noem alle zwarte dingen op die je ziet.</li></p>
+                    <p><li>Neem het getal 250 in je hoofd en haal er telkens 3 vanaf. </li></p>
+                    <p><li>Neem een hap van iets. Proef de smaak. Herken de structuur, ingrediënten, temperatuur en grootte.</li></p>
+                    <p><li>Ga in gedachte naar een kamer in je huis. Benoem alle items die je daar ziet.</li></p>
+                    <p><li>Verzin een woord en bedenk bij elke letter een nieuw woord. Bijvoorbeeld: "Pannekoek", P = Paard, A = Aardbei, N = Navel, N = Nietmachine, E = Engel, K = Kruisband, O = Orchidee, E = Efteling, K = Kaas.</li></p>
+                    <p><li>Noem drie dingen die je ziet. Noem drie dingen die je voelt. Noem drie dingen die je ruikt.</li></p>
+                    <p><li>Pak een voorwerp uit je tas, kast of jas. Bekijk het voorwerp goed. Hoe voelt het? Is het glad, zacht of juist ruw? Wat kan je met het item doen? Is het eten of toch iets waarmee je kan schrijven. Ga nauwkeurig het voorwerp bij langs. Omschrijf alle details.</li></p>
+                </div>
+                  
+        </div>
+    </main>
+{% endblock %}

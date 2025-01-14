@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>{% block title %}{% endblock %} - Samen in Balans</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/opmaak.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">HOMEPAGE</a>
+            <a href="/blog">BLOG</a>
+            <a href="/rust"> RUST</a>
+            <a href="/balans">BALANS</a>
+            <a href="/groei">GROEI</a>
+            <a href="/contact">CONTACT</a>
+            
+            
+            {% if not session['Gebruiker_ID'] %}
+                <a href="/inloggen">INLOGGEN</a>
+                <a href="/aanmelden">AANMELDEN</a>
+            {% endif %}
+            {% if session['Gebruiker_ID'] %}
+                <a href="/favorieten">FAVORIETEN</a>
+                <a href="#" onclick="return uitloggenBevestigen();">UITLOGGEN</a>
+            {% endif %}
+        </nav>
+    </header>    
+
+    <main id="content">{% block content %}{% endblock %}</main>
+
+    <footer>
+        <p>&copy; 2025 Samen in Balans </p>
+    </footer>
+
+    <script>
+        function uitloggenBevestigen() {
+            if (confirm("Weet je zeker dat je wilt uitloggen?") == true) {
+                window.location.href = '/uitloggen'
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %}Balans oefening - Levensdomein{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Levensdomein</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='balans_levensdomein') }}" method="post">
+                    {% if 'balans_levensdomein' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p> Balans en kennis van je levensdomeinen helpen je een evenwichtig en vervuld leven te leiden door alle belangrijke aspecten, zoals werk, gezondheid en relaties, in balans te houden. Ze vergroten je zelfbewustzijn en helpen je gerichte keuzes te maken voor persoonlijke groei. Door inzicht te hebben in deze domeinen, kun je veerkrachtiger omgaan met stress en tegenslagen. Kennis van je levensdomeinen maakt het makkelijker om prioriteiten te stellen en weloverwogen beslissingen te nemen. </p>
+            
+            <div class="one-section"></div>
+            <div class="section_l">
+                <h4>Binnen de oefening worden alle belangrijke levensgebieden in kaart gebracht en gereflecteerd op hoe deze domeinen zich verhouden tot elkaar. Het doel is om een overzicht te krijgen van de verschillende domeinen in je leven en te ontdekken waar je tevreden mee bent en waar misschien nog ruimte is voor verbetering. Het biedt inzicht in welke aspecten van je leven meer aandacht nodig hebben om een gezonde balans te creëren.</h4>
+                <h2>Benodigdheden: Een rustige plek waar je niet gestoord wordt. Pen en papier.</h2>
+                <h5 class="levensdomein_header">STAP EEN: Teken de cirkel van je leven </h5>
+                <p>Teken een grote cirkel op je papier en verdeel deze in 7 gelijke delen (zoals een taart). Elk deel staat voor een belangrijk levensdomein. </p>
+                <h5 class="levensdomein_header">STAP TWEE: Vul de levensdomeinen in</h5>
+                <p>Noteer zeven levensdomeinen in de delen van de cirkel. Hieronder zijn zeven voorbeelden:
+                    <li>Gezondheid: Fysieke gezondheid, energie en vitaliteit.
+                    <li>Relaties: Familie, vrienden, romantische relaties en sociale contacten.</li>
+                    <li>Carrière en werk: Werkplezier, carrièreontwikkeling, werk-privébalans.</li>
+                    <li>Persoonlijke groei: Zelfontwikkeling, zingeving, spiritualiteit, leerprocessen.</li>
+                    <li>Financiën: Financiële situatie, sparen, uitgaven, financiële zekerheid.</li>
+                    <li>Vrije tijd en recreatie: Hobby’s, ontspanning, reizen, vrije tijdsbesteding.</li>
+                    <li>Woonomgeving: Je huis, leefomgeving, fysieke ruimte.</li>
+                    </p>
+                <h5 class="levensdomein_header">STAP DRIE: Beoordeel je tevredenheid per domein</h5>
+                <p>Nu je de domeinen hebt ingevuld, beoordeel je je tevredenheid over elk domein op een schaal van 1 tot 10. Schrijf je score voor elk domein in de bijbehorende cirkeldelen.</p>
+                    <li>1 betekent "zeer ontevreden" of "volledig onvoldoende"</li>
+                    <li>10 betekent "zeer tevreden" of "perfect in balans"</li>
+                <h5 class="levensdomein_header">STAP VIER: Reflecteer en teken de cirkel</h5>
+                <p>Kijk naar de cijfers die je hebt ingevuld. Teken vervolgens een lijn door elk deel tot aan de cijfers die je hebt gegeven. Dit vormt een soort "spinnenweb" ofwel een grafiek van je leven. Het resultaat toont de balans of de mate van tevredenheid in elk domein.</p>
+                <h5 class="levensdomein_header">STAP VIJF: Identificeer verbeterpunten</h5>
+                <p>Bekijk het resultaat. Zijn er domeinen waar de score laag is? Wat zou je willen verbeteren? Zijn er domeinen waar je juist heel tevreden over bent? Denk na over de volgende vragen:</p>
+                    <li>Welke domeinen zijn het belangrijkst voor jou op dit moment?</li>
+                    <li>In welke domeinen zou je graag meer aandacht willen besteden?</li>
+                    <li>Wat zijn concrete acties die je kunt ondernemen om de lage scores te verbeteren?</li>
+                    <li>Wat kun je doen om de domeinen waarin je al goed zit te behouden of verder te versterken?</li>
+                <h5 class="levensdomein_header" >STAP ZES: Maak een actieplan</h5>
+                <p>Stel een plan op voor de domeinen die je wilt verbeteren. Wees specifiek over wat je wilt bereiken en hoe je dat gaat doen. Het kan helpen om kleine, haalbare stappen te zetten en deze in te plannen.</p>
+                <li>Gezondheid: Meer water drinken of meer groentes eten of elke week twee keer naar de sportschool gaan of elke dag een wandeling maken.</li>
+                <li>Relaties: Elke maand een quality time moment plannen met je partner, vrienden of familie.</li>
+                <li>Carrière en werk: Een cursus volgen om nieuwe vaardigheden te ontwikkelen of vaker ontspanningsmomenten inplannen tijdens werk.</li>
+                <li>Financiën: Een budgetplan opstellen en maandelijks sparen of minder vaak eten bestellen of vaker tweedehands items kopen.</li>
+                <li>Vrije tijd: Minstens één weekend per maand volledig vrij nemen van werk om te ontspannen of minimaal een dagdeel per week vrij plannen of elke dag een kort rust moment nemen of een rustroutine in de avond starten.</li>
+                <h5 class="levensdomein_header" >STAP ZEVEN: Herhaal de oefening </h5>
+                <p>Het is goed om deze oefening regelmatig te herhalen, bijvoorbeeld elke drie tot zes maanden, om je voortgang te meten en je plannen bij te stellen.</p>
+
+            </div>
+                
+                  
+        </div>
+    </main>
+{% endblock %}

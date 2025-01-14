@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<h1> Welkom op Samen in Balans! </h1>
+        <p class="text-left"> Van sip naar SiB, samen in Balans. SiB is een pagina voor mensen die op zoek zijn naar balans tussen rust en de voortdurend prikkelende wereld. </p>
+
+        <!-- Drie secties horizontaal naast elkaar -->
+        <div class="three-sections">
+
+            <div class="section_homepage">
+                <a href="/rust" class="btn btn-primary">RUST</a>
+                <img src="static/rust.png" alt="RUST" width="200" class="img-fluid">
+                <p>In een wereld die constant in beweging is, voelt het vaak alsof je mee moet rennen om bij te blijven. De dagelijkse drukte, verplichtingen en prikkels kunnen uitputten en overbelasten. Door het ervaren van rust in je leven, kan je de chaos loslaten en ruimte creëren voor herstel. Ervaar zelf wat rust voor je kan brengen!</p>
+                
+            </div>
+
+            <div class="section_homepage">
+                <a href="/balans" class="btn btn-primary">BALANS</a>
+                <img src="static/balans.png" alt="BALANS" width="200" class="img-fluid">
+                <p>In de dagelijkse prikkelende wereld is het makkelijk om jezelf te verliezen in één bepaald aspect van je leven, zoals werk, school, verplichtingen of zorgen. Door je energie te verdelen over belangrijke gebieden, zoals werk, relaties, gezondheid, rust en persoonlijke groei, leer je balans te krijgen in je leven, waardoor je meer ruimte kunt ervaren om te genieten van elke dag. Ontdek hoe je meer balans in je leven kunt krijgen!</p>
+                
+            </div>
+
+            <div class="section_homepage">
+                <a href="/groei" class="btn btn-primary">GROEI</a>
+                <img src="static/groei.png" alt="GROEI" width="200" class="img-fluid">
+                <p>Persoonlijke groei helpt je niet alleen om mee te kunnen komen in de constante stroom van het dagelijks leven, maar om er je eigen weg in te vinden. Het biedt de ruimte om jezelf te ontwikkelen, te leren van je ervaringen en jezelf te verbeteren. Dit alles zorgt ervoor dat je veerkrachtiger wordt, beter om kunt gaan met stress en bewuster keuzes kunt maken die bijdragen aan jouw welzijn. In een wereld die nooit stopt, zorgt persoonlijke groei ervoor dat je je eigen richting kunt bepalen.</p>
+                
+            </div>
+        </div>
+
+        {% endblock %}
+
+

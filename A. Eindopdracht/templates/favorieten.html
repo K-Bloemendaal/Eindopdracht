@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Favorieten{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Favorieten</h1>
+
+            {% if themas %}
+                <div class="one-section"></div>
+                <div class="section_l">
+                    <ul>
+                        {% for thema in themas %}
+                            <li><a href="/go_to_favoriet/{{ thema[1] }}">{{ thema[2] }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+         
+
+        </div>
+    </main>
+{% endblock %}

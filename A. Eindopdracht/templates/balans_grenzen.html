@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block title %}Balans oefening - Grenzen{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Grenzen in kaart brengen</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='balans_grenzen') }}" method="post">
+                    {% if 'balans_grenzen' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p> Het bewaken van je grenzen tussen werk en privé is essentieel voor het behoud van een gezonde balans en het voorkomen van overbelasting. Het respecteren van deze grenzen helpt ook om ruimte te creëren voor persoonlijke ontwikkeling, hobby's en tijd met dierbaren, wat bijdraagt aan een meer vervuld en gelukkig leven.  </p>
+            
+            <div class="one-section"></div>
+            <div class="section_h">
+                <h4>Hieronder staan verschillende tips voor het in kaart brengen, behouden en bewaken van je grenzen.</h4>
+                <p><li>Identificeer je grenzen</li></p>
+                <p>Reflecteer je behoeften: Wat is voor jou belangrijk voor je werkleven en wat voor je privéleven. Probeer je werkplekken gescheiden te houden. Door een aparte plek te creëren voor je werkruimte, is het makkelijker om mentaal van werk naar privé te schakelen.</p>
+                <p><li>Stel duidelijke werkuren in</li></p>
+                <p>Definieer werktijden: Bepaal van te voren welke uren je die dag werkt en welke niet. Maak gebruik van wekkers om jezelf te attenderen op de ingestelde uren. </p>
+                <p><li>Communiceer je grenzen</li></p>
+                <p>Wees duidelijk naar je collega's en leidinggevenden: Laat anderen weten wanneer je niet beschikbaar bent voor werk gerelateerde zaken, zodat ze jouw grenzen weten en kunnen respecteren. Communiceer ook thuis wanneer je ongestoord moet werken en wanneer je tijd voor hen hebt. </p>
+                <p><li>Leer 'Nee' zeggen</li></p>
+                <p>Wees assertief en zeg nee tegen werkgerelateerde zaken buiten werktijd om. Prioriteer de belangrijkste taken en stel onbelangrijke zaken uit tot de volgende werkdag. Dit voorkomt dat je werk in je privéleven binnendringt.</p>
+                <p><li>Plan tijd voor jezelf</li></p>
+                <p>Maak ruimte voor ontspanning. Balanceer je verplichtingen en wees realistisch over wat je kunt doen in de beschikbare tijd. Meer hierover in de oefening 'planning'.</p>
+                <p><li>Zorg voor je mentale gezondheid</li></p>
+                <p>Gun jezelf korte pauzes gedurende de werkdag. Hierdoor is het beter vol te houden én werk je na een pauze vaak productiever. Plan regelmatige vrije tijd/vakanties, zelfs als het maar een paar dagen is, om volledig los te komen van werk en je op te laden.</p>
+                <p><li>Evalueer regelmatig</li></p>
+                <p>Check in met jezelf: hoe goed je je grenzen bewaakt. Zijn er momenten waarop je toch over je grenzen heen gaat? Zo ja, zoek naar manieren om dit te verbeteren. Pas je grenzen aan als dat nodig is: Soms veranderen je werksituatie of privéomstandigheden, waardoor je je grenzen moet bijstellen. Blijf flexibel en bereid om aanpassingen te maken.</p>
+                  
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,161 @@
+<!--
+ 1. Altijd beginnen met DOCTYPE
+ 2. Taal op engels of nederlands zetten
+ 3. Titel Miauw
+ 4. Marley's fanpage H1
+ 5. Link naar bootstrap en link naar opmaak.css document
+ 6. Zet tekst aan linker kant van pagina
+ 7. Geef de body margin's zodat hij niet helemaal tegen linker kant begint
+ 8. Headers en paragraven links op pagina zetten
+ 9. Geef foto's een border en marges zodat het er mooi uitziet
+ 10. Javascript -> functie showalert -> MIAUW MIAUW MIAUW
+ 11. Body met H1 (zie punt 4)
+ 12. Maak classes om dingen te groeperen
+ 13. Voeg in de classes de header, met divider de paragraven en foto's en "anchor" <a> voor hyperlink (doe dit voor alle 3 de koppen)
+ 14. Zorg dat in de Anchor gelinkt wordt naar de juiste hyperlink
+ 15. Invoegen voor Javascript: <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 16. Form maken (zoals Jaqueline voor deed in de les)
+ 17. Code van Jaqueline eigen maken en aanpassen
+ 18. Button maken voor alertmessage 'MIAUW MIAUW MIAUW'
+ 19. Footer toevoegen
+
+ -->
+
+
+ <!DOCTYPE HTML>
+ <html lang="en">
+     <head>
+         <title> miauw </title>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+         <link rel="stylesheet" type="text/css" href="opmaak.css">
+         <style>
+             .text-left {
+                 text-align: left;
+             }
+
+             body {
+                 padding-left: 20px;
+                 padding-right: 20px;
+             }
+
+             h1, h2, h3, p {
+                 text-align: left;
+             }
+
+             p {
+                 text-align: left;
+                 padding-left: 10px;
+                 padding-right: 10px;
+             }
+
+             .row-flex {
+                 display: flex;
+                 align-items: center;
+             }
+
+                .row-flex img {
+                    border: 5px solid #592321;
+                    margin-right: 20px;
+                    margin-bottom: 10px;
+             }
+         </style>
+
+         <script>
+             function showAlert() {
+                 alert("MIAUW MIAUW MIAUW!");
+             }
+         </script>
+
+     </head>
+     <body>
+        <header>
+            <nav>
+                <a href="website.html">MAINPAGE</a>
+                <a href="learnaboutme_eindcode.html"> LEARN ABOUT ME </a>
+                <a href="myproject.html">PROJECTS</a>
+                <a href="fotogalerij.html">PHOTOGALLERY</a>
+            </nav>
+        </header>
+        <h1> MARLEY'S FANPAGE </h1>
+
+        <h2 class="text-left"> Welcome to my fanpage </h2>
+        <p class="text-left"> Hi, my name is Marley and I am voted, in my own household, the sweetest cat ever! Also the most spoiled cat ever, but let's not talk about.</p>
+
+        <h3 class="text-left"> ABOUT ME </h3>
+        <div class="row-flex text-left">
+            <img src="foto/marley4.jpg" alt="The most handsome fluffy boy" width="200" class="img-fluid">
+            <p>I was born in 2021, December 2nd. My mom and dad adopted me a couple weeks later. That was the start of the best life I could possibly think of. When you talk about cat toys, I have them all. When you talk about the best quality and freshest food, I have it. When you talk about the most cuddles and kisses in the world, I have it all. So maybe you wondering what I don't have. Well, I don't have a brother or sister yet. Not because of mom and dad, but the *miauw* landlord only allows one cat! Unbelievable right? I know!! Mom and dad give me all the love I want, and sometimes a little bit more.. They miauw at me with like 17 grammatical errors, yikes. At least they try. If you want to see more cute pictures of me, click on the blue button!</p>
+            <a href="learnaboutme_eindcode.html" class="btn btn-primary">Learn more about me!</a>
+         </div>
+
+        <h3 class="text-left"> MY PROJECTS </h3>
+        <div class="row-flex text-left">
+            <img src="foto/marley6.jpg" alt="The most handsome fluffy boy" width="200" class="img-fluid">
+            <p>You make me shy asking about my skills. But alright I will tell you. I am specialist in eating crumbs that mom and dad leave behind. I also looove to chew plastic even though I have a million toys. All jokes aside, I can do a few cool tricks. You want to know which ones? Click on the blue button </p>
+             <p class="text-left"><a href="myproject.html" class="btn btn-primary">Check out my projects!</a></p>
+         </div>
+
+         <h3 class="text-left"> PHOTO GALLERY </h3>
+         <div class="row-flex text-left">
+             <img src="foto/marley8.jpg" alt="The most handsome fluffy boy" width="200" class="img-fluid">
+             <p>If you want to see a gallery with photo's from me, click on the blue button! </p>
+             <p class="text-left"><a href="fotogalerij.html" class="btn btn-primary">Check out my photogallery!</a></p>
+         </div>
+
+        <h3 class="text-left"> CONTACT ME </h3>
+        <div class="row-flex text-left">
+            <img src="foto/marley2.jpg" alt="The most handsome fluffy boy" width="200" class="img-fluid">
+            <p>If you want to contact me, you can do it down below.  Just remember that you are contacting a cat that wants to sleep and probably won’t answer you unless you give me treats.</p>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <form name="contact" action="./send.html" method="POST">
+         <div>
+             <label for="Name">First name</label>
+             <input type="text" id="name" name="name" placeholder="name">
+         </div>
+
+         <div>
+             <label for="email">Email</label>
+             <input type="email" id="email" name="email" placeholder="email" required>
+         </div>
+
+         <div>
+             <select name="type">
+             <option>Suggestion</option>
+             <option selected>Donation</option>
+             <option>Question</option>
+             </select>
+         </div>
+
+         <div>
+             <textarea></textarea>
+         </div>
+
+         <div>
+         Submit?
+             <input type="radio" name="submit" value="yes" checked>
+             <input type="radio" name="submit" value="no">
+         </div>
+
+         <div>
+             <input type="submit">
+             <input type="reset">
+         </div>
+
+         <div>
+             <button type="button" onclick="showAlert()">Click me for an alertmessage!</button>
+         </div>
+
+     </form>
+
+     <footer class="text-center mt-4">
+        <p>&copy; 2024 Marley’s Fanpage</p>
+    </footer>
+     </body>
+ </html>

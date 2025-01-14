@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block title %}Rust oefening - Ademhaling{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Ademhaling</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='rust_ademhaling') }}" method="post">
+                    {% if 'rust_ademhaling' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p>Ademhalingsoefeningen helpen bij het verminderen van stress en overprikkeling door de parasympathische zenuwactiviteit te activeren, wat het lichaam in een rusttoestand brengt. Dit verlaagt de productie van stresshormonen zoals cortisol en vertraagt de hartslag. Hieronder vind je drie soorten ademhalingsoefeningen. </p>
+
+            <div class="three-sections">
+            
+                <div class="section_a">
+                    <p><strong>Box-ademhaling</strong></p>
+                    
+                    <h6>Stappen:</h6>
+                    <ul>
+                        <li>Zit rechtop in een comfortabele positie.</li>
+                        <li>Adem rustig in door je neus voor 4 seconden.</li>
+                        <li>Houd je adem vast voor 4 seconden.</li>
+                        <li>Adem langzaam uit door je mond voor 4 seconden.</li>
+                        <li>Houd je adem opnieuw vast voor 4 seconden.</li>
+                        <li>Herhaal de cyclus 5-10 keer.</li>
+                    </ul>
+
+                    <h5 class="waarom_het_werkt_header">Waarom het werkt: Box-ademhaling draagt bij aan verhoogde focus en ontspanning, stressvermindering. Daarnaast zorgt het ritme dat de geest kalmeert, de hartslag verlaagt en helpt om focus en controle te herstellen, vooral in stressvolle situaties.</h5>
+                </div>
+
+                <div class="section_a">
+                    <p><strong>Visualisatie Ademhaling</strong></p>
+                    <h6>Stappen:</h6>
+                    <ul>
+                        <li>Zit rechtop in een rustige omgeving en sluit je ogen.</li>
+                        <li>Begin langzaam in te ademen door je neus voor 4 seconden en stel je voor dat je inademt als frisse, kalmerende lucht die je lichaam vult.</li>
+                        <li>Houd je adem vast voor 1-2 seconden en visualiseer de rust die je voelt.</li>
+                        <li>Adem langzaam uit door je mond voor 6 seconden, stel je voor dat je alle spanning en negatieve energie uit je lichaam blaast.</li>
+                        <li>Herhaal dit 5-10 keer.</li>
+                    </ul>
+                    <h5 class="waarom_het_werkt_header">Waarom het werkt: Het draagt bij aan Ontspanning, vermindering van angst en stress. Door ademhaling te combineren met visualisatie kun je je geest afleiden van stressvolle gedachten en jezelf in een staat van diepe ontspanning brengen.</h5>
+                </div>
+
+                <div class="section_a">
+                    <p><strong>4-7-8 Ademhaling</strong></p>
+                    
+                    <h6>Stappen:</h6>
+                    <ul>
+                        <li>Zit of lig rechtop met een ontspannen houding.</li>
+                        <li>Adem volledig uit door je mond.</li>
+                        <li>Adem rustig in door je neus voor 4 seconden.</li>
+                        <li>Houd je adem vast voor 7 seconden.</li>
+                        <li>Adem langzaam uit door je mond voor 8 seconden.</li>
+                        <li>Herhaal de cyclus 4 tot 8 keer.</li>
+                    </ul>
+                    <h5 class="waarom_het_werkt_header">Waarom het werkt: Het draagt bij aan kalmeren van het zenuwstelsel, bevorderen van slaap. Deze oefening helpt om het parasympathische zenuwstelsel te activeren en vermindert fysieke spanning. Het is bijzonder effectief voor het bevorderen van slaap en het verlichten van angst.</h5>
+                </div>
+
+            </div>
+        </div>
+    </main>
+{% endblock %}
+

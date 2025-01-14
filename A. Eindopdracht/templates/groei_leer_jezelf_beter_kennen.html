@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block title %}Groei oefening - Leer jezelf kennen{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <h1 class="text-center my-4">Oefening Leer jezelf beter kennen</h1>
+
+        <!-- Favorieten knop bovenaan -->
+        {% if session['Gebruiker_ID'] %}
+            <form action="{{ url_for('favoriet_toevoegen', thema='groei_leer_jezelf_beter_kennen') }}" method="post">
+                {% if 'groei_leer_jezelf_beter_kennen' in session['favorieten'] %}
+                    <button type="button" disabled>Toegevoegd aan favorieten</button>
+                    <button type="submit">Verwijder deze oefening uit favorieten</button>
+                {% else %}
+                    <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                {% endif %}
+            </form>
+        {% endif %}
+        
+        <p>Het stellen van vragen aan jezelf is essentieel om jezelf beter te leren kennen, omdat het je dwingt om diep van binnen te kijken en bewust na te denken over je gedachten, gevoelens en overtuigingen. Door regelmatig vragen te stellen, krijg je meer inzicht in je waarden, motivaties en doelen. Dit helpt om duidelijker te bepalen wat je echt wilt in het leven. Hieronder staan enkele vragen die je jezelf kan stellen:</p>
+        
+       
+        <div class="two-sections">
+            <div class="section_x">
+                <h3>Vragen om jezelf beter te leren kennen</h3>
+                <div class="mb-5">
+                    <p><li>Wat zijn de vragen die jou de laatste tijd het meest bezighouden?</li></p>
+                    <p><li>Welke gedachten houden jou het meest bezig?</li></p>
+                    <p><li>Wat zijn de emoties die jij het meest voelt?</li></p>
+                    <p><li>Waardoor ontstaan volgens jou deze vragen, gedachtes of emoties?</li></p>
+                    <p><li>Geef je gemiddelde persooonlijke geluksgevoel een cijfer tussen de 1 en 10.</li></p>
+                    <p><li>Geef je gemiddelde persoonlijke succesgevoel een cijfer tussen 1 en 10.</li></p>
+                    <p><li>Waarom doe je wat je doet, privé en in je werk?</li></p>
+                    <p><li>Wat wil je echt op persoonlijk en zakelijk vlak?</li></p>
+                    <p><li>Wat houdt je tegen om te doen wat je echt wilt?</li></p>
+                    <p><li>Waar wil je naartoe?</li></p>
+                    <p><li>Waar sta je nu?</li></p>
+                    <p><li>Wat staat er tussen jou en je doel in? Wat houdt je tegen?</li></p>
+                    <p><li>Wat heb je nodig om te komen naar waar je wilt zijn?</li></p>
+                </div>
+            </div>
+
+            <div class="section_x">
+                <h3>Vragen om te ondekken wat je leuk vindt en wat bij je past</h3>
+                <div class="mb-5">
+                    <p><li>Waar word je blij van?</li></p>
+                    <p><li>Wat vind je zo leuk om te doen dat je er niet mee wilt stoppen?</li></p>
+                    <p><li>Waar ben je goed in?</li></p>
+                    <p><li>Op welke momenten voel jij je gelukkig?</li></p>
+                    <p><li>Hoe wil je dat andere mensen je zien?</li></p>
+                    <p><li>waar kan je van genieten?</li></p>
+                    <p><li>Wat vind je belangrijk in het leven?</li></p>
+                    <p><li>Waar ben je dankbaar voor?</li></p>
+                    <p><li>Wie ben je? Beschrijf je persoonlijkheid en je gedrag.</li></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

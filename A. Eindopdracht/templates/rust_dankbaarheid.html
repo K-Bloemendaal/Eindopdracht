@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Rust oefening - Dankbaarheid{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening dankbaarheid</h1>
+            
+            <!-- Favorieten knop bovenaan -->
+            <form action="{{ url_for('favoriet_toevoegen', thema='rust_dankbaarheid') }}" method="post">
+                {% if 'rust_dankbaarheid' in session['favorieten'] %}
+                    <button type="button" disabled>Toegevoegd aan favorieten</button>
+                    <button type="submit">Verwijder deze oefening uit favorieten</button>
+                {% else %}
+                    <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                {% endif %}
+            </form>
+
+            <p>Onderzoek gepubliceerd in Psychological Science suggereert dat mensen die dankbaarheid uiten, minder vatbaar zijn voor negatieve emoties en beter in staat zijn om zich te concentreren op positieve aspecten van hun leven, zelfs in moeilijke tijden. Het bijhouden van een dankbaarheidsdagboek kan helpen om je gedachten te verschuiven van stressvolle situaties naar aspecten die je waardeert, wat leidt tot een vermindering van stress en meer innerlijke rust.</p>
+            
+            <div class="one-section"></div>
+            <div class="section_a">
+                <h4>Noteer drie tot vijf dingen waarvoor je dankbaar bent in je leven. Dit mag van alles zijn, van hele grote dingen tot de glimlach van een voorbijganger. Denk bijvoorbeeld aan: </h4>
+                <ul>
+                    <li>Ik ben dankbaar dat ik een dak boven mijn hoofd heb en plek heb om thuis te komen.</li>
+                    <li>Ik ben dankbaar voor mijn kat die mij kopjes geeft.</li>
+                    <li>Ik ben dankbaar voor de zon die vandaag schijnt.</li>
+                    <li>Ik ben dankbaar dat mijn ouders gezond zijn.</li>
+                    <li>Ik ben dankbaar dat ik een partner heb, waarmee ik alles kan delen.</li>
+                    <li>Ik ben dankbaar voor het appje van een vriend(in) die ik vandaag kreeg.</li>
+                    <li>Ik ben dankbaar voor het eten dat op mijn bord ligt.</li>
+                    <li>Ik ben dankbaar dat ik niet in een oorlogsgebied leef.</li>
+                    <li>Ik ben dankbaar voor de bloemen die bloeien.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+{% endblock %}

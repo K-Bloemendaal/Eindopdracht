@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}Groei oefening - Moeilijke momenten evalueren{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Moeilijke momenten evalueren</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='groei_moeilijke_momenten_evalueren') }}" method="post">
+                    {% if 'groei_moeilijke_momenten_evalueren' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p> Het evalueren van moeilijke momenten is belangrijk voor persoonlijke groei en mentale gezondheid. Door reflectie kunnen we negatieve patronen herkennen. Evaluatie helpt bij het doorbreken van negatieve denkpatronen en bevordert een positievere kijk op onszelf en de wereld. Dit proces maakt ons veerkrachtiger en zorgt voor een betere balans in het leven. </p>
+            
+            <div class="one-section"></div>
+            <div class="section_h">
+                <h4>Hieronder staat een kort stappenplan om moeilijke momenten op een milde en vergevende manier voor jezelf te evalueren:</h4>
+                <p><li>Geef jezelf ruimte</li></p>
+                <p>Neem even de tijd om rustig na te denken, zonder jezelf te veroordelen. Het is belangrijk om je emoties te erkennen en jezelf de ruimte te geven om te voelen wat je voelt.</p>
+                <p><li>Bekijk het moment objectief</li></p>
+                <p>Beschrijf wat er gebeurde zonder jezelf of anderen te beschuldigen. Focus op de feiten en je reacties, zonder te oordelen. Dit helpt om het moment zonder schuldgevoel of ander negatief gevoel te analyseren.</p>
+                <p><li>Reflecteer op je gevoelens</li></p>
+                <p>Vraag jezelf af waarom je je op een bepaalde manier voelde. Wat was de onderliggende oorzaak van je emoties? Hierdoor leer je jezelf en je handelen beter begrijpen.</p>
+                <p><li>Leer van de situatie</li></p>
+                <p>Kijk naar wat je hebt geleerd van de ervaring. Welke inzichten kun je meenemen om beter om te gaan met soortgelijke situaties in de toekomst? Benader het als een kans voor groei, niet als een fout.</p>
+                <p><li>Wees vergevingsgezind voor jezelf (en anderen) </li></p>
+                <p>Herinner jezelf eraan dat iedereen fouten maakt en dat het oké is om imperfect te zijn. Geef jezelf de ruimte om te leren en te groeien, zonder jezelf te veroordelen of te hard te zijn.</p>
+            </div>
+                
+                  
+        </div>
+    </main>
+{% endblock %}

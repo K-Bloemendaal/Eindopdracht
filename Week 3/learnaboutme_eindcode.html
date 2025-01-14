@@ -1,0 +1,57 @@
+<!--
+1. Altijd beginnen met DOCTYPE
+ 2. Taal op engels of nederlands zetten
+ 3. Head maken met title My projects - Miauw
+ 4. Link naar bootstrap en link naar opmaak.css document + achtergrondkleur toevoegen
+ 5. Maak in de body classes
+ 6. Gebruik div om inhoud te grouperen
+ 7. H3 -> Pictures form me as a kitten
+ 8. Foto's van marley toevoegen
+ 9. Met Anchor weer link terug maken naar mainpage
+ 10. Footer toevoegen
+ 11. Javascript bootstrap toevoegen
+
+-->
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Learn About Me - Miauw</title>
+    <link rel="stylesheet" type="text/css" href="opmaak.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #EFE7DB;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="website.html">MAINPAGE</a>
+            <a href="learnaboutme_eindcode.html"> LEARN ABOUT ME </a>
+            <a href="myproject.html">PROJECTS</a>
+            <a href="fotogalerij.html">PHOTOGALLERY</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="text-center my-4">Learn More About Me</h1>
+
+        <h3>Pictures from me as a kitten</h3>
+        <div class="content text-center">
+            <img src="foto/kittenmarley.jpg" alt="The most handsome fluffy boy" width="200" class="img-fluid">
+            <img src="foto/kitten2marley.jpg" alt="The most handsome fluffy boy" width="200" class="img-fluid">
+            <img src="foto/kittenmarley3.jpg" alt="The most handsome fluffy boy" width="200" class="img-fluid">
+        </div>
+
+        <a href="website.html" class="btn btn-secondary mt-4">Back to Main Page</a>
+
+        <footer class="text-center mt-4">
+            <p>&copy; 2024 Marley’s Fanpage</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

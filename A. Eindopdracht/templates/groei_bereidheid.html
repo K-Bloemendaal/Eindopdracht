@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block title %}Groei oefening - Bereidheid {% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Bereidheid verhogen</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='groei_bereidheid') }}" method="post">
+                    {% if 'groei_bereidheid' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+
+            <p>Het vergroten van je bereidheid om angsten en uitdagingen aan te gaan is belangrijk omdat het je helpt om uit je comfortzone te stappen en te groeien. Wanneer je actief angsten confronteert, bouw je veerkracht op en vergroot je je zelfvertrouwen. Door je bereidheid te vergroten, leer je dat je in staat bent om moeilijke situaties te overwinnen, wat je mentale kracht versterkt. </p>
+
+                <div class="three-sections">
+                <div class="section_l">
+                    <h4>De oefening is bedoeld om je comfortzone stap voor stap te vergroten, zodat je je meer bereid voelt om uitdagingen en angsten aan te gaan. Het doel is om je zelfvertrouwen te vergroten en je angsten leefbaarder te maken.</h4>
+                    <h5 class="levensdomein_header">STAP EEN: Identificeer je angsten of uitdagingen</h5>
+                    <p>Schrijf een lijst van situaties die je angstig of ongemakkelijk maken. Dit kunnen zowel grote als kleine uitdagingen zijn, bijvoorbeeld drukke locaties bezoeken, een moeilijke conversatie aangaan of het proberen van iets nieuws.</p>
+                    <h5 class="levensdomein_header">STAP TWEE: Beoordeel je angsten </h5>
+                    <p>Beoordeel elke situatie op een schaal van 1 tot 10, waarbij 1 betekent dat je je er nauwelijks ongemakkelijk bij voelt en 10 betekent dat het je extreem angstig maakt. Dit helpt je om de situatie in kleinere, minder overweldigende stappen te verdelen.</p>
+                    <h5 class="levensdomein_header">STAP DRIE: Begin klein </h5>
+                    <p>Kies één uitdaging met een lage score (bijvoorbeeld een 2 of 3 op de schaal) en zet een kleine actie in beweging die je kunt doen om ermee om te gaan. Dit kan iets zijn zoals het samen aan gaan van de angst met een vriend(in) of het voorbereiden van een gesprek.</p>
+                    <h5 class="levensdomein_header">STAP VIER: Verhoog je bereidheid stapje voor stapje </h5>
+                    <p>Als de eerste stap je goed afgaat, breid je de actie dan langzaam uit. Bijvoorbeeld, als je in eerste instantie niet comfortabel was met een gesprek voeren, probeer dan een korte, informele interactie met een vreemde of een collega. Elke stap die je zet, verhoogt je gevoel van controle en vertrouwen.</p>
+                    <h5 class="levensdomein_header">STAP VIJF: Reflecteer zonder oordeel</h5>
+                    <p>Na elke actie, reflecteer op wat je hebt ervaren. Was het zoals je had verwacht? Wat heb je geleerd van de situatie? In plaats van jezelf te bekritiseren, focus op wat goed ging, hoe je je angst hebt overwonnen en wat je zou kunnen verbeteren de volgende keer. Dit helpt om je succes te vieren en de angst te verkleinen.</p>
+                    <h5 class="levensdomein_header">STAP ZES: Beloon jezelf</h5>
+                    <p>Elke keer dat je een angstige situatie aanpakt, geef jezelf een kleine beloning. Dit kan een pauze zijn, iets wat je graag doet of iets lekkers. Beloond worden helpt om een positieve associatie te creëren met het aangaan van uitdagingen.</p>
+                    <h5 class="levensdomein_header">STAP ZEVEN: Vergroot je uitdagingen geleidelijk</h5>
+                    <p>Naarmate je je meer comfortabel voelt met kleinere uitdagingen, begin je met grotere. Blijf de angst in kleine stapjes confronteren, zodat je vertrouwen groeit en je steeds meer bereid bent om grotere uitdagingen aan te gaan.</p>
+
+
+                
+                 </div>
+
+
+        
+                
+            </div>
+        </div>
+    </main>
+{% endblock %}

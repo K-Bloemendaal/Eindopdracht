@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Balans oefening - Rust plannen{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Planning</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='balans_planning') }}" method="post">
+                    {% if 'balans_planning' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p> Het inplannen van rust en ontspanning in je week is belangrijk voor je mentale gezondheid. Door tijd in te plannen voor rust en ontspanning, geef je jezelf de kans om te herstellen, zowel fysiek als mentaal. Rustmomenten stellen je in staat om je geest te kalmeren en de constant stroom van gedachten even los te laten. Dit bevordert niet alleen je concentratie en productiviteit wanneer je weer aan het werk gaat, maar het ondersteunt ook je emotionele veerkracht. Bovendien kunnen regelmatige momenten van ontspanning bijdragen aan een betere slaap.  </p>
+            
+            <div class="one-section"></div>
+            <div class="section_h">
+                <h4>Hieronder staan enkele tips om ontspanning en rust effectief in je leven in te plannen, zodat je je mentale gezondheid kunt ondersteunen:</h4>
+                <p><li>Plan ontspanning en rust net als een werkafspraak</li></p>
+                <p>Behandel rust als een prioriteit: Zet in je agenda specifieke tijdblokken voor ontspanning, net zoals je zou doen voor vergaderingen. Het helpt om rust te zien als iets wat net zo belangrijk is als werk. Zet herinneringen in je telefoon of agenda om ervoor te zorgen dat je je ontspanningstijd niet vergeet of overslaat door andere verplichtingen.</p>
+                <p><li>Begin met kleine tijdsblokken</li></p>
+                <p>Als je nog niet gewend bent om regelmatig rust in te plannen, begin dan met kleine tijdsblokken van bijvoorbeeld 10-30 minuten per dag. Dit maakt het makkelijker om het vol te houden. Plan korte pauzes, van 5 minuten, gedurende de werkdag waarin je even weg kunt stappen van je werkplek, een korte wandeling maakt of simpelweg rustig ademhaalt.</p>
+                <p><li>Plan grotere ontspanningsmomenten in het weekend, op vrije dagen of in vakanties</li></p>
+                <p>In het weekend of tijdens langere vrije dagen kun je grotere periodes van ontspanning plannen. Denk aan een paar uur voor jezelf, een weekenduitstapje of een lange wandeling. Plan activiteiten die je écht ontspannen: Dit kan variëren van een hobby, een dagje naar de natuur, yoga, een massage, tot tijd doorbrengen met vrienden of familie. Kies wat jou helpt om je volledig te ontspannen.</p>
+                <p><li>Zorg voor een dagelijkse ontspanningstruc</li></p>
+                <p>Maak rust deel van je dagelijkse routine: Of het nu een ochtendmeditatie, een korte yoga-sessie of het lezen van een boek is, zorg ervoor dat je dagelijks iets ontspannends doet. Plan ontspanning voor het slapengaan: Maak tijd om 's avonds tot rust te komen voordat je naar bed gaat, zoals het luisteren naar rustige muziek of een warm bad nemen. </p>
+                <p><li>Gebruik tijdblokken voor "digitale detox"</li></p>
+                <p>Plan schermvrije tijden: Zet in je agenda momenten waarop je geen elektronische apparaten gebruikt (telefoon, laptop, tv). Dit kan je helpen om mentaal te ontspannen en je energie weer op te laden. Wees streng in je grenzen: Zet bijvoorbeeld een tijd na werktijd (bijv. 19:00 uur) waarin je geen werkgerelateerde e-mails meer checkt of sociale media gebruikt, zodat je jezelf kunt loskoppelen van de digitale wereld.</p>
+                <p><li>Zorg voor een balans in je agenda</li></p>
+                <p> Vermijd het inplannen van te veel activiteiten op één dag, waardoor je geen ruimte hebt om te ontspannen. Zorg voor een gezonde afwisseling tussen werk, sociale activiteiten en rustmomenten. Wanneer je weet dat je een drukke werkweek hebt, plan dan rustmomenten in, zoals een rustige lunchpauze of een weekend waar je niet hoeft te werken.</p>
+                <p><li>Houd rekening met je energieniveau</li></p>
+                <p>Let op je energieniveau en plan rust op momenten wanneer je merkt dat je behoefte hebt aan een pauze. Als je merkt dat je week te druk wordt, probeer dan wat van je andere verplichtingen te verplaatsen of aan te passen, zodat er ruimte komt voor ontspanning.</p>
+                <p><li>Wees flexibel</li></p>
+                <p>Gun jezelf spontane rust: Niet alles hoeft vooraf gepland te zijn. Soms kan het heel verfrissend zijn om spontaan een moment voor jezelf in te lassen.</p>
+            </div>   
+        </div>
+    </main>
+{% endblock %}

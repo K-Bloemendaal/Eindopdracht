@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block title %}Rust oefening - Journal{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Journal</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='rust_journal') }}" method="post">
+                    {% if 'rust_journal' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+
+            <p> Journaling helpt bij het verminderen van stress en het verwerken van emotionele ervaringen. Studies tonen aan dat het vastleggen van negatieve ervaringen het emotionele welzijn bevordert, terwijl schrijven over positieve zaken zoals dankbaarheid kan leiden tot verhoogde geluk ervaringen en minder depressieve symptomen. Ook helpt het opschrijven van zorgen en gedachten voor het slapen bij het verminderen van nachtelijke piekergedachten en een verbeterde nachtrust. </p>
+            
+            <div class="one-section"></div>
+            <div class="section_j">
+                <h4>Het leuke aan journalen is dat je zelf invulling kan geven hoe je het wilt doen. Wil je alles wat in je hoofd zit opschrijven? Prima. Wil je werken met een structuur? Ook goed. Je kan niet fout gaan met journalen. Hieronder zijn een aantal vragen en voorbeelden wat je kan gebruiken om het journalen op gang te helpen. </h4>
+                <p><li>Een beschrijving van je dag.</li></p>
+                <p>Denk hierbij aan: wat je allemaal hebt gedaan. Wat je onderweg naar werk hebt gezien. Met wie je vandaag hebt samengewerkt.</p>
+                <p><li>Wat was het hoogtepunt van je dag? </li></p>
+                <p>Denk hierbij aan: die lekkere kop koffie of gezellige lunch.</p>
+                <p><li>Wat zou je morgen graag anders willen doen?</li></p>
+                <p>Denk hierbij aan: Iets minder chagerijnig gereageren dan vanochtend op je partner die, voor de koffie, een vraag stelde.</p>
+                <p><li>Waar heb je het meest van genoten vandaag?</li></p>
+                <p>Denk hierbij aan: de vogeltjes die aan het fluiten waren of de zon die scheen. </p>
+                <p><li>Waar ben je dankbaar voor?</li></p>
+                <p>Denk hierbij aan: mijn hond of kat die mij vrolijk begroet na werk.</p>
+                <p><li>Wat zijn je succesmomenten van de dag?</li></p>
+                <p>Denk hierbij aan: het to-do-lijstje dat je hebt afgewerkt of de belangrijke e-mail die je hebt verzonden. </p>
+                <p><li>Wat was jou goede daad van vandaag? </li></p>
+                <p>Denk hierbij aan: de deur open houden voor een ander, een pen uitlenen, glimlachen naar de buurvrouw of koken voor je partner. </p>
+            </div>   
+        </div>
+    </main>
+{% endblock %}

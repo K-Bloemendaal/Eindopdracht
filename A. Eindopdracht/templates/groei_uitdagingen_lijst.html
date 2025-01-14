@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Groei oefening - Uitdagingen lijst{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <h1 class="text-center my-4">Oefening Uitdagingen lijst</h1>
+
+            <!-- Favorieten knop bovenaan -->
+            {% if session['Gebruiker_ID'] %}
+                <form action="{{ url_for('favoriet_toevoegen', thema='groei_uitdagingen_lijst') }}" method="post">
+                    {% if 'groei_uitdagingen_lijst' in session['favorieten'] %}
+                        <button type="button" disabled>Toegevoegd aan favorieten</button>
+                        <button type="submit">Verwijder deze oefening uit favorieten</button>
+                    {% else %}
+                        <button type="submit">Voeg deze oefening toe aan favorieten</button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            
+            <p> Het maken van een uitdagingenlijst is belangrijk voor persoonlijke groei en ontwikkeling, omdat het je helpt bewust te worden van de obstakels die je tegenkomt. Door deze uitdagingen op papier te zetten, kun je ze systematisch aanpakken en verminderen. Het herkennen van je uitdagingen is de eerste stap naar het overwinnen ervan en het bereiken van je doelen.  </p>
+            
+            <div class="one-section"></div>
+            <div class="section_h">
+                <h4>Het maken van een uitdagingenlijst is belangrijk voor persoonlijke groei en ontwikkeling, omdat het je helpt bewust te worden van de obstakels die je tegenkomt. Door deze uitdagingen op papier te zetten, kun je ze systematisch aanpakken en verminderen. Het herkennen van je uitdagingen is de eerste stap naar het overwinnen ervan en het bereiken van je doelen.</h4>
+                <p><li>Reflecteer op je huidige situatie</li></p>
+                <p>Begin met het nadenken over de verschillende aspecten van je leven (werk, studie, gezondheid, persoonlijke relaties, etc.). Vraag jezelf af: Wat gaat niet goed? Waar loop ik tegenaan? Mocht je de levensdomein-oefening hebben gedaan kan je deze erbij pakken.</p>
+                <p><li>Identificeer specifieke uitdagingen</li></p>
+                <p>Schrijf elke uitdaging of obstakel op die je tegenkomt, groot of klein. Wees specifiek en gedetailleerd. Bijvoorbeeld: "Ik heb moeite met rust nemen" of "Ik voel me gestrest door mijn werkdruk." of "Ik heb moeite met nee zeggen."</p>
+                <p><li>Beoordeel de impact van elke uitdaging</li></p>
+                <p>Beoordeel voor elke uitdaging hoe belangrijk of urgent het is. Is het iets dat je snel moet aanpakken, of kan het wachten? Dit helpt je om prioriteiten te stellen. Simpel gezegd: Welke uitdaging vind je het belangrijkst om mee te beginnen?</p>
+                <p><li>Maak een actieplan</li></p>
+                <p>Stel een specifiek, meetbaar en haalbaar doel voor de uitdaging. Het doel moet gericht zijn op het overwinnen van de uitdaging, maar het mag opgebouwd worden in kleine stapjes. Bijvoorbeeld: Einddoel: Ik wil van mijn overspannen klachten af. Tussendoel: Ik leer meer rust inplannen. Tussendoel: Ik leer vaker nee zeggen. Tussendoel: Ik plan vaker een moment in voor mijzelf.</p>
+                <p><li>Bepaal obstakels en oplossingen</li></p>
+                <p>Denk na over mogelijke obstakels die je kunt tegenkomen tijdens het uitvoeren van je actieplan. Wat zou je kunnen tegenhouden? Bijvoorbeeld: "Ik zit na werktijd nog vaak te werken of bekijk nog even de mail." Bedenk vervolgens oplossingen voor deze obstakels, zoals: "Ik zet meldingen uit na werkuren en kies duidelijke werktijden."</p>
+                <p><li>Evalueer en pas aan waar nodig</li></p>
+                <p>Na een bepaalde periode, bijvoorbeeld een maand, evalueer je of je doel is behaald. Als het niet is gelukt, kijk dan naar wat er aangepast moet worden. Moet je je aanpak veranderen? Heb je je acties goed uitgevoerd? Pas je plan aan om je doel alsnog te bereiken. Denk eraan: kleine stapjes zijn ook goed, niet alle doelen hoeven in één keer behaald te worden. Progressie is belangrijker dan perfectie.</p>
+
+
+            </div>
+        
+                  
+        </div>
+    </main>
+{% endblock %}
